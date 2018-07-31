@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>barrage</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/barrage.css">
+
+</head>
+<body>
+<div class="barrageBg pr">
+    <div class="code h pa code1">
+        <div class="codeBox">
+            <img src="assets/img/barrage/codeHW.png">
+        </div>
+        <p class="t-center font-ssb">扫描二维码<br />寄信给未来的自己</p>
+    </div>
+    <div class="code h pa code2">
+        <div class="codeBox">
+            <img src="assets/img/barrage/codeHW.png">
+        </div>
+        <p class="t-center font-ssb">扫描二维码<br />寄信给未来的自己</p>
+    </div>
+    <div class="barrageParent h">
+
+    </div>
+</div>
+
+<script src="assets/plug/jquery/2.1.3/jquery.js"></script>
+<script src="assets/js/barrage.js"></script>
+</body>
+</html>

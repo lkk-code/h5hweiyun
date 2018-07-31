@@ -1,0 +1,155 @@
+.barrageBg {
+  width: 8192px;
+  height: 1152px;
+  background: url("../img/barrage/bg.jpg");
+  background-size: 100% 100%;
+  //overflow: hidden;
+  .code {
+    width: 1540px;
+    padding-top: 148px;
+    top: 0;
+    z-index: 1000;
+    &.code1 {
+      left: 0;
+    }
+    &.code2 {
+      right: 0;
+    }
+    p {
+      width: 406px;
+      margin-left: 500px;
+      margin-top: 40px;
+      font-size: 48px;
+      color: #b77ae1;
+    }
+    .codeBox {
+      width: 648px;
+      height: 643px;
+      margin: 0 auto;
+      background: url("../img/barrage/code1.png");
+      padding: 238px 0 0 78px;
+      img {
+        width: 360px;
+        height: 360px;
+      }
+    }
+  }
+  .barrageParent {
+    width: 5112px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    .barrageBox {
+      position: absolute;
+      height: 100%;
+      padding-top: 100px;
+      top: 0;
+      left: 5112px;
+      transform: translate3d(0,0,0);
+      .barrageWrap {
+        min-width: 2px;
+        height: 446px;
+        white-space: nowrap;
+        position: relative;
+        display: inline-block;
+        &:first-child {
+          margin-bottom: 60px;
+        }
+        .barrage {
+          display: inline-block;
+          width: 590px;
+          color: #fff;
+          position: relative;
+          .barrageChild {
+            display: inline-block;
+            max-width: 590px;
+            padding: 11px 102px 48px 62px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+          }
+          &.barrage1 .barrageChild {
+            background-image: url("../img/barrage/barrageBg1.png");
+          }
+          &.barrage2 .barrageChild {
+            background-image: url("../img/barrage/barrageBg2.png");
+          }
+          &.barrage3 .barrageChild {
+            background-image: url("../img/barrage/barrageBg3.png");
+          }
+          &.barrage4 .barrageChild {
+            background-image: url("../img/barrage/barrageBg4.png");
+          }
+          &.barrage5 .barrageChild {
+            background-image: url("../img/barrage/barrageBg5.png");
+          }
+          &.barrage6 .barrageChild {
+            background-image: url("../img/barrage/barrageBg6.png");
+          }
+          .barrageUser {
+            height: 74px;
+            line-height: 74px;
+            font-size: 30px;
+          }
+          .avatarBox {
+            width: 96px;
+            height: 96px;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            top: -48px;
+            left: -48px;
+            img {
+              width: 88px;
+              height: 88px;
+            }
+          }
+          p {
+            max-height: 146px;
+            line-height: 46px;
+            font-size: 30px;
+            overflow: hidden;
+            white-space: normal;
+            word-break: break-all;
+            letter-spacing: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+/*
+.barrageParent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.barrageBox {
+  position: absolute;
+  height: 100%;
+  padding-top: 40px;
+  top: 0;
+  left: 1920px;
+}
+
+.barrageWrap {
+  height: 45px;
+  margin: 40px 0;
+  background: rgba(0, 0, 0, .1);
+  white-space: nowrap;
+  position: relative;
+}
+
+.barrage {
+  display: inline-block;
+  max-width: 120px;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid red;
+  padding: 0 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}*/

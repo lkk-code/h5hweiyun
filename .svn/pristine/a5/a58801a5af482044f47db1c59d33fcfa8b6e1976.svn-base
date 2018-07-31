@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/*CSS Reset*/
+body, div, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, form, table, tr, td, th, button, input, select, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  border: none;
+  vertical-align: middle;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+  outline: none;
+}
+
+input, select, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  border: 1px solid #ddd;
+  font: 14px Arial,'Microsoft YaHei';
+
+}
+input:focus, select:focus, textarea:focus {
+  border: 1px solid #5581f8!important;
+
+}
+
+/*textarea{resize:none;}*/
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*em, i, strong, b {
+  font-style: normal;
+  font-weight: normal;
+}*/
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {
+  display: block;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  /*font-size: 100%;
+  font-weight: normal;*/
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+@font-face {
+  font-family: 'ssn';
+  src: url("../plug/font/SourceHanSansCN-Normal.woff");
+}
+@font-face {
+  font-family: 'ssb';
+  src: url("../plug/font/SourceHanSansCN-Bold.woff");
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font: 20px Arial,'Microsoft YaHei',SimHei;
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.fontArial {
+  font-family: Arial!important;
+}
+a {
+  color: #4a4a4a;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #4a4a4a;
+}
+
+:after, :before, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*box setting*/
+.w {
+  width: 100%;
+}
+
+.h {
+  height: 100%;
+}
+
+.wh {
+  width: 100%;
+  height: 100%;
+}
+
+.db {
+  display: block;
+}
+
+.dl {
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*clear and float*/
+.clear::after, .row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/*cursor*/
+.cursor {
+  cursor: pointer;
+}
+
+/*font*/
+.fs12 {
+  font-size: 12px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+.fs24 {
+  font-size: 24px;
+}
+
+/*position*/
+.pr {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+.pf {
+  position: fixed;
+}
+
+/*text setting*/
+.giveMeEllipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-normal {
+  font-weight: normal;
+}
+
+.t-weight {
+  font-weight: 700;
+}
+
+.t-weightM {
+  font-weight: 400;
+}

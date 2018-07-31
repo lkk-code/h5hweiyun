@@ -1,0 +1,179 @@
+var host = "http://hwc.vr68.com";
+var Context;
+
+//获取所有的Box
+function chegPage(index) {
+    var boxClass = '.data_box' + index;
+    if (index == 1) {
+        boxClass = '.data_box';
+    }
+    $('.Box').css('display', 'none');
+    // $(boxClass).css('display', 'block');
+    $('.Box').fadeOut();
+    $(boxClass).fadeIn();
+}
+
+
+//点击书写你的寄语  绑定事件 第一页按钮
+$('.wrileMe').click(function () {
+    chegPage(2);
+})
+
+//提交事件 .submit绑定事件 第二页按钮
+$('.data_box2').children('.submit').click(function () {
+    //获取自己一封信输入的值
+    var textVa = document.getElementById('textVa');
+    Context = textVa.innerText;
+    chegPage(3);
+})
+
+//提交事件 .submit2绑定事件  第三页按钮
+$('.data_box3').children('.submit2').click(function () {
+    var email = document.getElementById('InputVa').innerText;
+    checkEmail(email, function (result) {
+        // console.log(result);
+        if (result) {
+            console.log(email);
+            Submission(email, function (res) {
+                chegPage(4);
+            })
+
+        }
+    });
+})
+
+//提交事件 .ReturnHome绑定事件 第四页按钮
+$('.data_box4').children('.ReturnHome').click(function (e) {
+    e.preventDefault();
+    chegPage(5);
+})
+
+
+/*过滤表情*/
+function filteremoji(cb) {
+    cb = cb || function () {
+    };
+    var ranges = [
+        '\ud83c[\udf00-\udfff]',
+        '\ud83d[\udc00-\ude4f]',
+        '\ud83d[\ude80-\udeff]',
+        '\ud83d[\u2000-\u2fff]',
+        '\ud83d[\udc00-\udfff]'
+    ];
+    var emojireg = $("#emoji_input").val();
+    emojireg = emojireg.replace(new RegExp(ranges.join('|'), 'g'), '');
+
+    cb(emojireg)
+    // alert(emojireg);
+}
+
+//首页弹幕发送按钮过滤表情
+$('.data_box').children('.foter_box').children('.send').click(function () {
+    filteremoji(function (data) {
+        sendBarrage(data);
+    });
+})
+//尾页弹幕发送按钮过滤表情
+$('.data_box5').children('.foter_box').children('.send').click(function () {
+    filteremoji(function (data) {
+        sendBarrage(data);
+    });
+})
+
+
+/*邮箱验证*/
+function checkEmail(email, cb) {
+    var result;
+    var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/; //正则表达式
+    // console.log(obj.innerText);
+    if (email == "") { //输入不能为空
+        result = false;
+    } else if (!reg.test(email)) { //正则验证不通过，格式不对
+        result = false;
+    } else {
+        result = true;
+    }
+    cb(result);
+}
+
+//登陆
+function login() {
+    // $.get(, function(res){
+    //
+    // });
+    $.ajax({
+        url: host + "/api/index/index",
+        data: "",
+        type: "GET",
+        headers: {
+            "X-Requested-With": "XMLHttpRequest"
+        },
+        // dataType: 'jsonp',
+        success: function (res) {
+            console.log(res)
+            if (res.code == 0) {
+                window.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa763aa3c0e6b1d9a&redirect_uri=http%3A%2F%2Fhwc.vr68.com%2Fapi%2Findex%2Fcallback&response_type=code&scope=snsapi_userinfo&state=7c57fec88ca279ab947531e2045c92b2#wechat_redirect';
+            } else if (res.code == 1) {
+                console.log(res.status);
+                if (res.data.status == 1) {
+                    chegPage(5);
+                } else if (res.data.status == 0) {
+                    chegPage(1);
+                }
+            }
+
+        }
+    })
+}
+
+// 发送弹幕
+function sendBarrage(text) {
+    $.ajax({
+        url: host + "/api/index/barrage",
+        data: {
+            content: text
+        },
+        type: "POST",
+        headers: {
+            "X-Requested-With": "XMLHttpRequest"
+        },
+        success: function (res) {
+            if (res.code == 1) {
+                console.log(res)
+            }
+        }
+    })
+}
+
+//提交信内容
+function Submission(email, cb) {
+    $.ajax({
+        url: host + "/api/index/addletter",
+        data: {
+            content: Context,
+            email: email
+        },
+        type: "POST",
+        headers: {
+            "X-Requested-With": "XMLHttpRequest"
+        },
+        // dataType: 'jsonp',
+        success: function (res) {
+            if (res.code == 1) {
+                cb(res)
+            }
+        }
+    })
+}
+
+
+function init() {
+
+    login()
+}
+
+init()
+
+
+
+

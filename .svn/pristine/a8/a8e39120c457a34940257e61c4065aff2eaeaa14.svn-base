@@ -1,0 +1,41 @@
+.barrageBg {
+  width: 8192px;
+  height: 1152px;
+  background: url("../img/barrage/bg.jpg");
+  background-size: 100% 100%; }
+
+/*
+.barrageParent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.barrageBox {
+  position: absolute;
+  height: 100%;
+  padding-top: 40px;
+  top: 0;
+  left: 1920px;
+}
+
+.barrageWrap {
+  height: 45px;
+  margin: 40px 0;
+  background: rgba(0, 0, 0, .1);
+  white-space: nowrap;
+  position: relative;
+}
+
+.barrage {
+  display: inline-block;
+  max-width: 120px;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid red;
+  padding: 0 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}*/

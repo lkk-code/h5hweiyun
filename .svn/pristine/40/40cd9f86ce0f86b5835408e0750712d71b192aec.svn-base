@@ -1,0 +1,210 @@
+var text_ = [
+  'zxcasdqwesadfsdf16',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf15',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf13',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf12',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf',
+  'zxcasdqwesadfsdf11',
+  'zxcasdqwesadfsdf0',
+  'zxcasdqwesadfsdf9',
+  'zxcasdqwesadfsdf8',
+  'zxcasdqwesadfsdf7',
+  'zxcasdqwesadfsdf6',
+  'zxcasdqwesadfsdf5',
+  'zxcasdqwesadfsdf4',
+  'zxcasdqwesadfsdf3',
+  'zxcasdqwesadfsdf2',
+  'zxcasdqwesadfsdf1'
+]; // 弹幕文本
+
+// 生成随机数
+function RandomNum(Min, Max) {
+  var Range = Max - Min;
+  var Rand = Math.random();
+  /*if (Math.round(Rand * Range) == 0) {
+    return Min + 1;
+  }*/
+  var num = Min + Math.round(Rand * Range);
+  return num;
+}
+
+var app_;
+
+function boxInterval(index) {
+  console.log($('.barrageBox').offset().left);
+
+  app_ =  window.setInterval(function () {
+    var element_ = $(document).find('.barrageBox').eq(index);
+    var elementPrev_ = element_.prev();
+    var width_ = element_.width();
+    var time_ = (width_ + 1920) * 2;
+    if (elementPrev_.length > 0) {
+      if (parseInt(elementPrev_.css('left')) < 1920 - elementPrev_.width() && element_.attr('data-status') == 1) {
+        console.log(parseInt(elementPrev_.css('left')) < 1920 - elementPrev_.width());
+        element_.attr('data-status', 0);
+        element_.animate({left: -width_}, time_, 'linear', function () {
+          $(this).remove();
+          window.clearInterval(app_);
+        });
+
+      }
+    } else {
+      element_.attr('data-status', 0);
+      element_.animate({left: -width_}, time_, 'linear', function () {
+        $(this).remove();
+        window.clearInterval(app_);
+      });
+    }
+  }, 10);
+}
+
+function BarrageMethod() {
+  // 弹幕文本
+  this.text_ = [
+    'zxcasdqwesadfsdf16',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf15',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf13',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf12',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf',
+    'zxcasdqwesadfsdf11',
+    'zxcasdqwesadfsdf0',
+    'zxcasdqwesadfsdf9',
+    'zxcasdqwesadfsdf8',
+    'zxcasdqwesadfsdf7',
+    'zxcasdqwesadfsdf6',
+    'zxcasdqwesadfsdf5',
+    'zxcasdqwesadfsdf4',
+    'zxcasdqwesadfsdf3',
+    'zxcasdqwesadfsdf2',
+    'zxcasdqwesadfsdf1'
+  ];
+
+  this.boxIndex = 0; // 动画盒子索引
+
+  this.app_; // 定时器变量
+
+  this.htmlTemp_ = '';
+}
+BarrageMethod.prototype = {
+  constructor: BarrageMethod,
+
+  htmlDiv: function (index) {
+    return '<div class="barrageBox barrageBox' + index + '" data-status="1"><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div></div>'
+  },
+
+  RandomNum: function(Min, Max) {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    /*if (Math.round(Rand * Range) == 0) {
+      return Min + 1;
+    }*/
+    var num = Min + Math.round(Rand * Range);
+    return num;
+  },
+
+  boxInterval: function(index) {
+    console.log($('.barrageBox').offset().left);
+
+    this.app_ =  window.setInterval(function () {
+      var element_ = $(document).find('.barrageBox').eq(index);
+      var elementPrev_ = element_.prev();
+      var width_ = element_.width();
+      var time_ = (width_ + 1920) * 2;
+      if (elementPrev_.length > 0) {
+        if (parseInt(elementPrev_.css('left')) < 1920 - elementPrev_.width() && element_.attr('data-status') == 1) {
+          console.log(parseInt(elementPrev_.css('left')) < 1920 - elementPrev_.width());
+          element_.attr('data-status', 0);
+          element_.animate({left: -width_}, time_, 'linear', function () {
+            $(this).remove();
+            window.clearInterval(app_);
+          });
+
+        }
+      } else {
+        element_.attr('data-status', 0);
+        element_.animate({left: -width_}, time_, 'linear', function () {
+          $(this).remove();
+          window.clearInterval(app_);
+        });
+      }
+    }, 10);
+  },
+
+  innerBarrage :function() {
+    var textLen = this.text_.length;
+    $('.barrageParent').append(this.htmlDiv(this.boxIndex));
+    for (var i = 0; i < textLen; i++) {
+      var mLeft_ = this.RandomNum(10, 120);
+      $(document).find('.barrageBox' + this.boxIndex + ' .barrageWrap').eq(this.RandomNum(0, 9)).append('<div class="barrage" style="margin-left: ' + mLeft_ + 'px;">' + this.text_[i] + '</div>');
+    }
+    this.boxInterval(this.boxIndex);
+    this.boxIndex += 1;
+  }
+}
+
+var barrageMethod = new BarrageMethod();
+
+
+
+var boxIndex = 0;
+$('.submitBtn').click(function () {
+  /*var textLen = text_.length;
+  $('.barrageParent').append('<div class="barrageBox barrageBox' + boxIndex + '" data-status="1"><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div><div class="barrageWrap"></div></div>');
+  for (var i = 0; i < textLen; i++) {
+    var mLeft_ = RandomNum(10, 120);
+    $(document).find('.barrageBox' + boxIndex + ' .barrageWrap').eq(RandomNum(0, 9)).append('<div class="barrage" style="margin-left: ' + mLeft_ + 'px;">' + text_[i] + '</div>');
+  }
+  boxInterval(boxIndex);
+  boxIndex += 1;*/
+  barrageMethod.innerBarrage();
+});

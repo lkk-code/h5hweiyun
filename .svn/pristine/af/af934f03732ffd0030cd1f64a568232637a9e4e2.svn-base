@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <script src="assets/plug/flexible/flexible_css.js"></script>
+    <script src="assets/plug/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/temp.css">
+    <title>致未来自己的一封信</title>
+</head>
+<body style="font-size: 12px">
+<div class="top_right_music_box">
+    <img class="music_start play_music" src="assets/img/common/music_icon.png" alt="">
+    <img class="music_stop" src="assets/img/common/music_stop.png" alt="">
+</div>
+<audio id="audio" autoplay="autoplay" loop="loop">
+    <source src="assets/music/12_short_shine-a-light_0031.mp3" type="audio/mpeg">
+</audio>
+<!--1-->
+<div  class="data_box Box" id="container1">
+        <div class="animation">
+            <!--<img src="assets/img/image/yuandian1.png" alt="">-->
+        </div>
+        <div class="hw_Img"><img src="./assets/img/icon/huawei.png" alt=""></div>
+        <div class="xy_img"><img src="./assets/img/image/huaweiChina.png" alt=""></div>
+        <div class="frame">
+            <div class="aircraft">
+                <img src="./assets/img/image/aircraft.png" alt="">
+                <div class="Text font-ssb">
+                    <p>给未来的自己一封信</p>
+                    <br>
+                    <p>2018年已过半，年初制定的吃樱桃财务自由完成了吗？</p>
+                    <p>发际线较去年相比退后了几厘米？</p>
+                    <p>比自信心膨胀得更快的肚腩又崩掉了几颗衬衣扣子？</p>
+                    <p> 人生嘛，总有一些坎坎坎坎坎坎坎坎坎坎坎坎坎坎坎坎，</p>
+                    <p>不要悲伤，不要心急！</p>
+                    <p>生活要抱有希望！</p>
+                    <p>写点什么给未来的自己吧，</p>
+                    <p>相信总有雨过天晴晴晴晴晴晴晴晴晴晴晴晴晴晴晴的未来！</p>
+                </div>
+                <div class="polygon">
+                    <img src="assets/img/image/polygon1.png" alt="">
+                    <img src="assets/img/image/polygon2.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="btn_box font-ssb">
+            <img src="./assets/img/image/pen.png" alt="">
+            <p class="wrileMe font-ssb">点击书写你的寄语</p>
+        </div>
+        <div class="foter_box font-ssb">
+            <input id="emoji_input" type="text" class="InputText" placeholder="写弹幕" />
+            <p class="send font-ssb">发 送</p>
+        </div>
+</div>
+
+<!--2-->
+<div  class="data_box2 Box" id="container2" >
+    <div class="animation"><img src="assets/img/image/yuan2.png" alt=""></div>
+    <div class="hw_Img"><img src="./assets/img/icon/huawei.png" alt=""></div>
+    <div class="xy_img"><img src="assets/img/image/huaweiChina.png" alt=""></div>
+    <div class="frame">
+        <div class="pen_box"><img src="./assets/img/image/pen.png" alt=""></div>
+        <div class="Text_box font-ssb"><p>致未来的自己一封信 </p></div>
+        <div class="Top_wire"><img src="assets/img/image/Top.png" alt=""></div>
+        <div class="Bottom_wire"><img src="assets/img/image/Top.png" alt=""></div>
+        <div class="dian"><img src="./assets/img/image/polygon3.png" alt=""></div>
+        <div class="dian1"><img src="./assets/img/image/polygon3.png" alt=""></div>
+        <div class="exit font-ssb">
+            <textarea id="textVa" maxlength="200"></textarea>
+            <!--<p id="textVa" contenteditable="true" placeholder="请输入" oninput="box2Change()"></p>-->
+            <div class="astrict"><span id="count">0</span>/200</div>
+        </div>
+        <div class="huaweiLogo"><img src="./assets/img/icon/huawei1.png" alt=""></div>
+    </div>
+
+
+    <div class="submit font-ssb">
+        <p>提交</p>
+    </div>
+</div>
+
+<!--3-->
+<div  class="data_box3 Box" id="container3" >
+    <div class="hw_Img"><img src="./assets/img/icon/huawei.png" alt=""></div>
+    <div class="xy_img"><img src="assets/img/image/huaweiChina.png" alt=""></div>
+    <div class="frame"></div>
+    <div class="animation1"><img src="assets/img/image/yuandian3.png" alt=""></div>
+    <div class="Text_box1 font-ssn"><p>2019年6月26日接收的Email地址：</p></div>
+    <div class="exit2 font-ssn"><p contenteditable="true" id="InputVa" placeholder="请输入邮箱"></p></div>
+    <div class="aircraftBule"><img src="./assets/img/image/aircraft_bule.png" alt=""></div>
+    <div class="edit font-ssn">
+        <p >确定要寄送这封信吗？提交后，要等明年才能拆封咯~</p>
+    </div>
+    <div class="submit2 font-ssn" ><p >提交</p></div>
+    <div class="submit2_1 font-ssn"><p>等一等</p></div>
+</div>
+
+<!--4-->
+<div  class="data_box4 Box" id="container4" >
+    <div class="hw_Img"><img src="./assets/img/icon/huawei.png" alt=""></div>
+    <div class="xy_img"><img src="assets/img/image/huaweiChina.png" alt=""></div>
+    <div class="animation4"><img src="assets/img/image/yuandian4.png" alt=""></div>
+    <div class="frame">
+
+        <div class="wire4"><img src="./assets/img/image/wire4.png" alt=""></div>
+        <div class="edit font-ssn">
+            <p>封存成功</p>
+            <p>期待见证你的成长</p>
+            <p>明年见</p>
+        </div>
+        <div class="share font-ssn">
+            <p>邀请更多小伙伴一起参与</p>
+            <p>封存属于你们的记忆~</p>
+        </div>
+    </div>
+
+    <div class="ReturnHome font-ssn"><p >返回首页</p></div>
+</div>
+
+<!--5-->
+<div  class="data_box5 Box" id="container5">
+    <div class="animation">
+        <!--<img src="assets/img/image/yuandian1.png" alt="">-->
+    </div>
+    <div class="hw_Img"><img src="./assets/img/icon/huawei.png" alt=""></div>
+    <div class="xy_img"><img src="./assets/img/image/huaweiChina.png" alt=""></div>
+    <div class="frame">
+        <div class="aircraft">
+            <img src="./assets/img/image/aircraft.png" alt="">
+            <div class="Text font-ssn">
+                <p>给未来的自己一封信</p>
+                <br>
+                <p>2018年已过半，年初制定的吃樱桃财务自由完成了吗？</p>
+                <p>发际线较去年相比退后了几厘米？</p>
+                <p>比自信心膨胀得更快的肚腩又崩掉了几颗衬衣扣子？</p>
+                <p> 人生嘛，总有一些坎坎坎坎坎坎坎坎坎坎坎坎坎坎坎坎，</p>
+                <p>不要悲伤，不要心急！</p>
+                <p>生活要抱有希望！</p>
+                <p>写点什么给未来的自己吧，</p>
+                <p>相信总有雨过天晴晴晴晴晴晴晴晴晴晴晴晴晴晴晴的未来！</p>
+            </div>
+            <div class="polygon">
+                <img src="assets/img/image/polygon1.png" alt="">
+                <img src="assets/img/image/polygon2.png" alt="">
+            </div>
+        </div>
+        <div class="btn_box">
+            <img src="./assets/img/image/pen.png" alt="">
+            <p>封存成功</p>
+        </div>
+    </div>
+
+
+    <div class="foter_box font-ssn" >
+        <input type="text" class="InputText" id="emoji_input2" placeholder="写弹幕"/>
+        <p class="send font-ssn">发 送</p>
+    </div>
+</div>
+
+<script src="assets/plug/jquery/2.1.3/jquery.js"></script>
+<script src="assets/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+html,body{
+	height: 100%;
+}
+/*.Box{*/
+	/*display: none;*/
+/*}*/
+img{
+	pointer-events: none!important;
+}
+.data_box , .data_box2 , .data_box3 , .data_box4 , .data_box5{
+	overflow: hidden;
+}
+.data_box{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url("../img/image/LAIKA.jpg") no-repeat;
+	max-width: 10rem;
+	margin: auto;
+	background-size: cover;
+}
+
+ /*.animation{*/
+	/*width: 9.33rem;*/
+	/*height: 13.65rem;*/
+	/*position: absolute;*/
+
+	/*top: 1.2rem;*/
+	/*left: 0.7rem;*/
+	/*background: url("../img/image/yuandian1.png") no-repeat;*/
+	/*background-size: cover;*/
+/*}*/
+.hw_Img{
+	padding-top: .54rem;
+	padding-left: .42rem;
+}
+.hw_Img img{
+	width: 2.72rem;
+	height: .61rem;
+}
+.xy_img{
+	margin-top: .57rem;
+	margin-left: 0.42rem;
+}
+.xy_img img{
+	width: 6.29rem;
+	height: 1.52rem;
+}
+.data_box .frame{
+	background: url("../img/image/juxing1.png")no-repeat;
+	background-size: cover;
+	width: 6.84rem;
+	height: 7.84rem;
+	position: relative;
+	top: .9rem;
+	left: 1.6rem;
+}
+.aircraft{
+	position: absolute;
+	top: 4rem;
+	left: 1.38rem;
+}
+.aircraft img{
+	width: 1.36rem;
+	height: 0.91rem;
+}
+
+/*******2 */
+.data_box2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("../img/image/beijing2.png") no-repeat;
+    max-width: 10rem;
+    margin: auto;
+    background-size: cover;
+}
+#container2 .animation img{
+	width: 8.6rem;
+	height: 11.1rem;
+	position: absolute;
+	top: 3rem;
+	left: .3rem;
+}
+.data_box2 .frame{
+	background: url("../img/image/hexagon.png")no-repeat;
+	background-size: cover;
+	width: 7.97rem;
+	height: 9.17rem;
+	position: relative;
+	top: .9rem;
+	left: .85rem;
+}
+
+
+/*3*/
+.data_box3{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url("../img/image/beijing2.png") no-repeat;
+	max-width: 10rem;
+	margin: auto;
+	background-size: cover;
+}
+.data_box3 .frame{
+	background: url("../img/image/kuang3.png")no-repeat;
+	background-size: cover;
+	width: 8.3rem;
+	height: 6.3rem;
+	position: relative;
+	top: 1.8rem;
+	left: .85rem;
+}
+#container3 .animation1 img{
+	width: 9rem;
+	height: 11.8rem;
+	position: absolute;
+	top: 0.8rem;
+	left: -.4rem;
+
+}
+
+/*4*/
+.data_box4{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url("../img/image/beijing2.png") no-repeat;
+	max-width: 10rem;
+	margin: auto;
+	background-size: cover;
+}
+.data_box4 .frame{
+	background: url("../img/image/sexangle4.png")no-repeat;
+	background-size: cover;
+	width: 7.97rem;
+	height: 9.17rem;
+	position: relative;
+	top: 1.1rem;
+	left: .85rem;
+}
+#container4 .animation4 img{
+	width: 7.4rem;
+	height: 10rem;
+	position: absolute;
+	top: 5.6rem;
+	left: 2.35rem;
+
+}
+
+/*5*/
+.data_box5{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url("../img/image/LAIKA.jpg") no-repeat;
+	max-width: 10rem;
+	margin: auto;
+	background-size: cover;
+}
+/*#container5 .animation img {*/
+	/*width: 9.33rem;*/
+	/*height: 12.7rem;*/
+	/*position: absolute;*/
+	/*top: 1.66667rem;*/
+	/*left: 1.06667rem;*/
+/*}*/
+/*#container5 .animation1{*/
+	/*width: 9.33rem;*/
+	/*height: 13.65rem;*/
+	/*position: absolute;*/
+	/*!*z-index: ;*!*/
+	/*top: 1.2rem;*/
+	/*left: 0.7rem;*/
+	/*background: url("../img/image/yuandian1.png") no-repeat;*/
+	/*background-size: cover;*/
+/*}*/
+.data_box5 .frame{
+	background: url("../img/image/juxing1.png")no-repeat;
+	background-size: cover;
+	width: 6.84rem;
+	height: 7.84rem;
+	position: relative;
+	top: .9rem;
+	left: 1.6rem;
+}

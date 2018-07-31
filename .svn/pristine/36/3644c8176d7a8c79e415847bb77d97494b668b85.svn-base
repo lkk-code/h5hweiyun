@@ -1,0 +1,288 @@
+var host = "http://hwc.vr68.com";
+var Context;
+var textVa = $('#textVa');
+var starTime = Date.parse(new Date()) + '';
+ starTime = starTime.substring(0,10);
+var timer=null;
+$(function () {
+
+// 文本滚动事件
+    timer = setTimeout(function () {
+        $('.Text').animate({scrollTop: 200}, 5000)
+    },2000)
+
+
+//获取所有的Box
+    function chegPage(index) {
+        var boxClass = '.data_box' + index;
+        if (index == 1) {
+            boxClass = '.data_box';
+        }
+        $('.Box').css('display', 'none');
+        // $(boxClass).css('display', 'block');
+        $('.Box').fadeOut();
+        $(boxClass).fadeIn();
+        addBKGMove($(boxClass));
+    }
+
+
+//点击书写你的寄语  绑定事件 第一页按钮
+    $('.wrileMe').click(function () {
+        chegPage(2);
+    })
+
+    function box2Change() {
+        console.log(123)
+    }
+
+//提交事件 .submit绑定事件 第二页按钮
+    $('.data_box2').children('.submit').click(function () {
+        //获取自己一封信输入的值
+        Context = textVa.val();
+        if(Context == ''){
+            $('#textVa').attr('placeholder','不能为空');
+        }else{
+            chegPage(3);
+        }
+
+    })
+
+
+//提交事件 .submit2绑定事件  第三页按钮
+    $('.data_box3').children('.submit2').click(function () {
+        var email = document.getElementById('InputVa').innerText;
+        checkEmail(email, function (result) {
+            console.log(result);
+            if (result) {
+                console.log(email);
+                Submission(email, function (res) {
+                    chegPage(4);
+                    console.log(res);
+                })
+            }
+        });
+    })
+
+    // 等一等
+    $('.data_box3').children('.submit2_1').click(function () {
+        chegPage(2);
+        Context = textVa.val();
+    })
+//提交事件 .ReturnHome绑定事件 第四页按钮
+    $('.data_box4').children('.ReturnHome').click(function (e) {
+        e.preventDefault();
+        chegPage(5);
+    })
+
+    /*过滤表情*/
+    function filteremoji(data, cb) {
+        var result;
+        cb = cb || function () {
+        };
+        var ranges = [
+            '\ud83c[\udf00-\udfff]',
+            '\ud83d[\udc00-\ude4f]',
+            '\ud83d[\ude80-\udeff]',
+            '\ud83d[\u2000-\u2fff]',
+            '\ud83d[\udc00-\udfff]'
+        ];
+        result = data.replace(new RegExp(ranges.join('|'), 'g'), '');
+        cb(result)
+    }
+
+//首页弹幕发送按钮过滤表情
+    $('.data_box').children('.foter_box').children('.send').click(function () {
+        var text = $("#emoji_input").val();
+        filteremoji(text, function (data) {
+            sendBarrage(data);
+            $('#emoji_input').val("");
+        });
+    })
+//尾页弹幕发送按钮过滤表情
+    $('.data_box5').children('.foter_box').children('.send').click(function () {
+        var text = $("#emoji_input2").val()
+        filteremoji(text, function (data) {
+            sendBarrage(data);
+            $('#emoji_input2').val("");
+        });
+    })
+
+
+    /*邮箱验证*/
+    function checkEmail(email, cb) {
+        var result;
+        var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/; //正则表达式
+        // console.log(obj.innerText);
+        if (email == "") { //输入不能为空
+            result = false;
+            $('.alertBox').children('.inntext').text('邮箱不能为空');
+        } else if (!reg.test(email)) { //正则验证不通过，格式不对
+            result = false;
+            $('.alertBox').children('.inntext').text('邮箱格式不正确');
+        } else {
+            result = true;
+        }
+        cb(result);
+    }
+
+//登陆
+    function login() {
+        $.ajax({
+            url: host + "/api/index/index",
+            data: {'url': window.location.href},
+            type: "GET",
+            // dataType: 'jsonp',
+            success: function (res) {
+                if (res.url !== '') {
+                    window.location = res.url;
+                } else if (res.url == '') {
+                    //wx分享接口
+                    shareIni=res.data.wechat;
+                    shareInit();
+                    //
+                    if (res.data.status == 1) {
+                        chegPage(5);
+                    } else if (res.data.status == 0) {
+                        chegPage(1);
+                    }
+                }
+            },
+            error: function (e) {
+            }
+        })
+    }
+
+// 发送弹幕
+    function sendBarrage(text) {
+        $.ajax({
+            url: host + "/api/index/barrage",
+            data: {
+                content: text
+            },
+            type: "POST",
+            success: function (res) {
+                if (res.code == 1) {
+                    console.log(res);
+                }
+            }
+        })
+
+    }
+
+//提交信内容
+    function Submission(email, cb) {
+        $.ajax({
+            url: host + "/api/index/addletter",
+            data: {
+                content: Context,
+                email: email
+            },
+            type: "POST",
+            // dataType: 'jsonp',
+            success: function (res) {
+                if (res.code == 1) {
+                    cb(res)
+                    console.log(res);
+                }
+            }
+        })
+    }
+
+// 最大字符
+    var maxCount = 0;  // 最高字数，这个值可以自己配置
+    $("#textVa").on('keyup', function () {
+        var len = getStrLength(this.value);
+        $("#count").html(maxCount + len);
+    })
+
+// 中文字符判断
+    function getStrLength(str) {
+        var len = str.length;
+        var reLen = 0;
+        for (var i = 0; i < len; i++) {
+            if (str.charCodeAt(i) < 0 || str.charCodeAt(i) > 200) {
+                // 全角
+                reLen += 1;
+            } else {
+                reLen++;
+            }
+        }
+        return reLen;
+    }
+
+
+    function init() {
+        login();
+        Music();
+        console.log(starTime);
+    }
+
+    init();
+
+})
+
+//每隔十秒
+function postStopTime() {
+    var time = Date.parse(new Date()) + '';
+    time = time.substring(0,10);
+    console.log('end time:', time);
+    $.ajax({
+        url: host + "/api/index/visit",
+        data: {
+            start_time: starTime,
+            end_time: time
+        },
+        type: "POST",
+        // dataType: 'jsonp',
+        success: function (res) {
+            console.log(res.data);
+        }
+    });
+}
+
+setInterval(postStopTime,10000);
+
+// 时间戳
+window.onbeforeunload = function (event) {
+    console.log('132');
+    postStopTime();
+}
+
+
+//音乐功能
+function Music() {
+    $('.top_right_music_box').on('touchstart', function (event) {
+        event.preventDefault();
+        var audio = $('#audio')[0];
+        if (audio.paused) {
+            audio.play();
+            //this.style.animationPlayState = 'running';
+            $('.music_start').addClass('play_music');
+            $('.music_stop').fadeOut();
+        } else {
+            audio.pause();
+            //this.style.animationPlayState = 'paused';
+            $('.music_start').removeClass('play_music');
+            $('.music_stop').fadeIn();
+        }
+
+    });
+}
+
+
+
+
+/**解决微信不能自动播音频问题
+ * 因为微信自动屏蔽了 自动播放
+ * 主要是为了防止 自动加载浪费资源 和 加载速度会变慢
+ * **/
+document.addEventListener('DOMContentLoaded',function (){
+    function audioAutoPlay(){
+        var audio_ = document.getElementById('audio');
+        audio_.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio_.play();
+        }, false);
+    }
+    audioAutoPlay();
+});

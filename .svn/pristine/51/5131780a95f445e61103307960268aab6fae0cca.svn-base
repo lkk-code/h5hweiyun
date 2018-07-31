@@ -1,0 +1,56 @@
+//获取所有的Box
+function chegPage(index) {
+    var boxClass = '.data_box' + index;
+    if (index == 1) {
+        boxClass = '.data_box';
+    }
+    $('.Box').css('display','none');
+    // $(boxClass).css('display', 'block');
+    $('.Box').fadeOut();
+    $(boxClass).fadeIn();
+}
+//调用方法
+chegPage(1);
+
+//点击书写你的寄语  绑定事件
+$('.wrileMe').click(function () {
+    chegPage(2);
+})
+
+//提交事件 .submit绑定事件
+$('.data_box2').has('.submit').click(function () {
+    chegPage(3);
+})
+
+//提交事件 .submit2绑定事件
+$('.data_box3').children('.submit2').click(function (e) {
+    e.preventDefault();
+    chegPage(4);
+})
+
+//提交事件 .ReturnHome绑定事件
+$('.data_box4').children('.ReturnHome').click(function (e) {
+    e.preventDefault();
+    chegPage(5);
+})
+
+function filteremoji(){
+    var ranges = [
+        '\ud83c[\udf00-\udfff]',
+        '\ud83d[\udc00-\ude4f]',
+        '\ud83d[\ude80-\udeff]',
+        '\ud83d[\u2000-\u2fff]',
+        '\ud83d[\udc00-\udfff]'
+
+    ];
+    var emojireg = $("#emoji_input").val();
+    emojireg = emojireg .replace(new RegExp(ranges.join('|'), 'g'), '');
+    alert(emojireg);
+}
+
+$('.data_box').children('.foter_box').children('.send').click(function (e) {
+    e.preventDefault();
+    console.log(1235);
+    filteremoji();
+
+})

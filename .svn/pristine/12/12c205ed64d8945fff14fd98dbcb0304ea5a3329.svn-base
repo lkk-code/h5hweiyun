@@ -1,0 +1,357 @@
+.barrageBg {
+  width: 8192px;
+  height: 1152px;
+  background: url("../img/barrage/bg.jpg");
+  background-size: 100% 100%; }
+  .barrageBg .animateBox {
+    width: 5112px;
+    overflow: hidden;
+    top: 0;
+    left: 1540px; }
+    .barrageBg .animateBox .lineL {
+      width: 4px;
+      transform: rotate(-45deg) translate(0, 0); }
+      .barrageBg .animateBox .lineL.lineL1 {
+        top: -200px;
+        left: 0;
+        height: 200px;
+        background: #dd0278;
+        animation: lineLeft 3s linear infinite; }
+      .barrageBg .animateBox .lineL.lineL2 {
+        top: 100px;
+        left: -200px;
+        height: 200px;
+        background: #08c295;
+        animation: lineLeft1 3s linear infinite;
+        animation-delay: 0.8s; }
+      .barrageBg .animateBox .lineL.lineL3 {
+        top: -200px;
+        left: 700px;
+        height: 160px;
+        background: #5f5029;
+        animation: lineLeft2 3s linear infinite;
+        animation-delay: 0.4s; }
+      .barrageBg .animateBox .lineL.lineL4 {
+        top: -200px;
+        left: -100px;
+        height: 200px;
+        background: #b2664d;
+        animation: lineLeft3 3s linear infinite;
+        animation-delay: 1.4s; }
+    .barrageBg .animateBox .lineR {
+      width: 4px;
+      transform: rotate(45deg) translate(0, 0); }
+      .barrageBg .animateBox .lineR.lineR1 {
+        top: -200px;
+        right: 0;
+        height: 200px;
+        background: #dd0278;
+        animation: lineRight 3s linear infinite;
+        animation-delay: 0.8s; }
+      .barrageBg .animateBox .lineR.lineR2 {
+        top: 100px;
+        right: -200px;
+        height: 200px;
+        background: #08c295;
+        animation: lineRight1 3s linear infinite;
+        animation-delay: 1.4s; }
+      .barrageBg .animateBox .lineR.lineR3 {
+        top: -200px;
+        right: 700px;
+        height: 160px;
+        background: #5f5029;
+        animation: lineRight2 3s linear infinite;
+        animation-delay: 0.4s; }
+      .barrageBg .animateBox .lineR.lineR4 {
+        top: -200px;
+        right: -100px;
+        height: 200px;
+        background: #b2664d;
+        animation: lineRight3 3s linear infinite; }
+    .barrageBg .animateBox .icon {
+      background-repeat: no-repeat;
+      background-size: 100% 100%; }
+      .barrageBg .animateBox .icon.iconL1 {
+        width: 185px;
+        height: 161px;
+        background-image: url("../img/barrage/l1.png");
+        top: 440px;
+        left: 1648px;
+        animation: iconL 2s ease-in-out infinite; }
+      .barrageBg .animateBox .icon.iconL2 {
+        width: 53px;
+        height: 24px;
+        background-image: url("../img/barrage/l2.png");
+        top: 1030px;
+        left: 692px;
+        animation: iconL1 2s ease-in-out infinite;
+        animation-delay: 0.2s; }
+      .barrageBg .animateBox .icon.iconL3 {
+        width: 62px;
+        height: 82px;
+        background-image: url("../img/barrage/l3.png");
+        top: 756px;
+        left: 408px;
+        animation: iconL2 2s ease-in-out infinite;
+        animation-delay: 0.6s; }
+      .barrageBg .animateBox .icon.iconL4 {
+        width: 67px;
+        height: 96px;
+        background-image: url("../img/barrage/l4.png");
+        top: 48px;
+        left: 1184px;
+        animation: iconL3 2s ease-in-out infinite;
+        animation-delay: 0.4s; }
+      .barrageBg .animateBox .icon.iconR1 {
+        width: 185px;
+        height: 161px;
+        background-image: url("../img/barrage/r1.png");
+        top: 440px;
+        right: 1648px;
+        animation: iconL 2s ease-in-out infinite;
+        animation-delay: 0.6s; }
+      .barrageBg .animateBox .icon.iconR2 {
+        width: 53px;
+        height: 24px;
+        background-image: url("../img/barrage/r2.png");
+        top: 1030px;
+        right: 692px;
+        animation: iconL1 2s ease-in-out infinite; }
+      .barrageBg .animateBox .icon.iconR3 {
+        width: 62px;
+        height: 82px;
+        background-image: url("../img/barrage/r3.png");
+        top: 756px;
+        right: 408px;
+        animation: iconL2 2s ease-in-out infinite;
+        animation-delay: 0.4s; }
+      .barrageBg .animateBox .icon.iconR4 {
+        width: 67px;
+        height: 96px;
+        background-image: url("../img/barrage/r4.png");
+        top: 48px;
+        right: 1184px;
+        animation: iconL3 2s ease-in-out infinite;
+        animation-delay: 0.2s; }
+  .barrageBg .code {
+    width: 1540px;
+    padding-top: 148px;
+    top: 0;
+    z-index: 1000; }
+    .barrageBg .code.code1 {
+      left: 0; }
+    .barrageBg .code.code2 {
+      right: 0; }
+    .barrageBg .code p {
+      width: 406px;
+      margin-left: 500px;
+      margin-top: 40px;
+      font-size: 48px;
+      color: #b77ae1; }
+    .barrageBg .code .codeBox {
+      width: 648px;
+      height: 643px;
+      margin: 0 auto;
+      background: url("../img/barrage/code1.png");
+      padding: 238px 0 0 78px; }
+      .barrageBg .code .codeBox img {
+        width: 360px;
+        height: 360px; }
+  .barrageBg .barrageParent {
+    width: 5112px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; }
+    .barrageBg .barrageParent .barrageBox {
+      position: absolute;
+      height: 100%;
+      padding-top: 100px;
+      top: 0;
+      left: 5112px;
+      transform: translate3d(0, 0, 0); }
+      .barrageBg .barrageParent .barrageBox .barrageWrap {
+        height: 446px;
+        white-space: nowrap;
+        position: relative;
+        display: inline-block; }
+        .barrageBg .barrageParent .barrageBox .barrageWrap:first-child {
+          margin-bottom: 60px; }
+        .barrageBg .barrageParent .barrageBox .barrageWrap .barrage {
+          display: inline-block;
+          width: 590px;
+          color: #fff;
+          position: relative; }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage .barrageChild {
+            display: inline-block;
+            max-width: 590px;
+            padding: 11px 102px 48px 62px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: relative; }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage.barrage1 .barrageChild {
+            background-image: url("../img/barrage/barrageBg1.png"); }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage.barrage2 .barrageChild {
+            background-image: url("../img/barrage/barrageBg2.png"); }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage.barrage3 .barrageChild {
+            background-image: url("../img/barrage/barrageBg3.png"); }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage.barrage4 .barrageChild {
+            background-image: url("../img/barrage/barrageBg4.png"); }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage.barrage5 .barrageChild {
+            background-image: url("../img/barrage/barrageBg5.png"); }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage.barrage6 .barrageChild {
+            background-image: url("../img/barrage/barrageBg6.png"); }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage .barrageUser {
+            height: 74px;
+            line-height: 74px;
+            font-size: 30px; }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage .avatarBox {
+            width: 96px;
+            height: 96px;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            top: -48px;
+            left: -48px; }
+            .barrageBg .barrageParent .barrageBox .barrageWrap .barrage .avatarBox img {
+              width: 88px;
+              height: 88px; }
+          .barrageBg .barrageParent .barrageBox .barrageWrap .barrage p {
+            max-height: 146px;
+            line-height: 46px;
+            font-size: 30px;
+            overflow: hidden;
+            white-space: normal;
+            word-break: break-all;
+            letter-spacing: 5px; }
+
+@keyframes lineLeft {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(-45deg) translate(18px, 926px);
+    opacity: 1; }
+  100% {
+    transform: rotate(-45deg) translate(36px, 1852px);
+    opacity: .1; } }
+
+@keyframes lineLeft1 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(-45deg) translate(14px, 726px);
+    opacity: 1; }
+  100% {
+    transform: rotate(-45deg) translate(28px, 1452px);
+    opacity: .1; } }
+
+@keyframes lineLeft2 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(-45deg) translate(16px, 726px);
+    opacity: 1; }
+  100% {
+    transform: rotate(-45deg) translate(33px, 1792px);
+    opacity: .1; } }
+
+@keyframes lineLeft3 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(-45deg) translate(18px, 926px);
+    opacity: 1; }
+  100% {
+    transform: rotate(-45deg) translate(36px, 1952px);
+    opacity: .1; } }
+
+@keyframes lineRight {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(45deg) translate(-18px, 926px);
+    opacity: 1; }
+  100% {
+    transform: rotate(45deg) translate(-36px, 1852px);
+    opacity: .1; } }
+
+@keyframes lineRight1 {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(45deg) translate(-14px, 726px);
+    opacity: 1; }
+  100% {
+    transform: rotate(45deg) translate(-28px, 1452px);
+    opacity: .1; } }
+
+@keyframes lineRight2 {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(45deg) translate(-16px, 726px);
+    opacity: 1; }
+  100% {
+    transform: rotate(45deg) translate(-33px, 1792px);
+    opacity: .1; } }
+
+@keyframes lineRight3 {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: .6; }
+  50% {
+    transform: rotate(45deg) translate(-18px, 926px);
+    opacity: 1; }
+  100% {
+    transform: rotate(45deg) translate(-36px, 1952px);
+    opacity: .1; } }
+
+@keyframes iconL {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; }
+  50% {
+    transform: translate(-20px, -20px) scale(0.9);
+    opacity: 1; }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; } }
+
+@keyframes iconL1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; }
+  50% {
+    transform: translate(-5px, 5px) scale(0.9);
+    opacity: 1; }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; } }
+
+@keyframes iconL2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; }
+  50% {
+    transform: translate(-5px, 5px) scale(0.9);
+    opacity: 1; }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; } }
+
+@keyframes iconL3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; }
+  50% {
+    transform: translate(-10px, 10px) scale(0.9);
+    opacity: 1; }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: .8; } }

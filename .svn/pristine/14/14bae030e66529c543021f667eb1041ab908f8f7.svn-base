@@ -1,0 +1,144 @@
+function BarrageMethod() {
+  // 弹幕文本
+  this.text_ = [];
+
+  this.boxIndex = 0; // 动画盒子索引
+
+  this.app_; // 定时器变量
+
+  this.htmlTemp_ = '';
+
+  this.sorcketUrl = 'ws://39.108.80.183:2346';
+
+  this.websocket;
+}
+
+BarrageMethod.prototype = {
+  startNO:0,
+  constructor: BarrageMethod,
+
+  init: function () {
+    this.receiveMessage();
+  },
+
+  htmlDiv: function (index) {
+    return '<div style="display: inline-block" class="barrageBox barrageBox' + index + '" data-status="1"><div style="display: inline-block" class="barrageWrap"></div><div style="display: inline-block" class="barrageWrap"></div></div>'
+  },
+
+  RandomNum: function (Min, Max) {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    /*if (Math.round(Rand * Range) == 0) {
+      return Min + 1;
+    }*/
+    var num = Min + Math.round(Rand * Range);
+    return num;
+  },
+  update:function(){
+    var i=this.startNO;
+    var l=this.startNO+3;
+    l=(l>this.boxIndex?this.boxIndex:l);
+    console.log('i,l:',i,l);
+    /*var i=0;
+    var l=this.boxIndex;*/
+    for (i; i < l; i++) {
+      var element_ = $(document).find('.barrageBox'+i);
+      var elementPrev_ = element_.prev();
+      var width_ = element_.width()+5112;
+      var time_ = (width_ + 5112)*2;
+      // var time_ = (width_ + 5112)*.1;
+      if (elementPrev_.length > 0) {
+        // if (parseInt(elementPrev_.offset().left) < 6652 - elementPrev_.width() && element_.attr('data-status') == 1) {
+
+          console.log('ratio:',width_/time_);
+          element_.attr('data-status', 0);
+          element_.css({
+            'transition': 'transform '+time_+'ms linear',
+            'transform': 'translate3d('+-width_+'px,0,0)'
+          });
+          (function(index,removeTime,that_){
+            setTimeout(function () {
+              console.log('remove handler');
+              that_.startNO++;
+              var removeElement_ = $(document).find('.barrageBox'+index);
+              removeElement_.remove();
+              that_=null;
+            },removeTime);
+          })(i,time_,this);
+        //}
+      } else {
+        if(element_.attr('data-status') == 1) {
+          console.log('ratio:',width_/time_);
+
+          element_.attr('data-status', 0);
+          element_.css({
+            'transition': 'transform '+time_+'ms linear',
+            'transform': 'translate3d('+-width_+'px,0,0)'
+          });
+          (function(index,removeTime,that_){
+            setTimeout(function () {
+              console.log('remove handler');
+              that_.startNO++;
+              var removeElement_ = $(document).find('.barrageBox'+index);
+              removeElement_.remove();
+              that_=null;
+            },removeTime);
+          })(i,time_,this);
+        }
+      }
+    }
+  },
+
+  innerBarrage: function (text) {
+    var textLen = text.length;
+    $('.barrageParent').append(this.htmlDiv(this.boxIndex));
+    var boxInner = $(document).find('.barrageBox' + this.boxIndex + ' .barrageWrap');
+    for (var i = 0; i < textLen; i++) {
+      var mLeft_ = this.RandomNum(100, 500);
+      var mTop_ = this.RandomNum(-10, 200);
+      var boxInd = this.RandomNum(0, 1); // 盒子位置
+      var classInd = this.RandomNum(1, 6); //弹幕背景
+      boxInner.eq(boxInd).append('<div class="barrage barrage' + classInd + '" style="top: ' + mTop_ + 'px;margin-left: ' + mLeft_ + 'px;"><div class="barrageChild">' +
+          '<h5 class="font-ssb barrageUser">' + text[i].nickname + '</h5>' +
+          '<div class="avatarBox pa"><img src="' + text[i].head_image + '"></div>' +
+          '<p>' + text[i].content + '</p></div></div>');
+    }
+    this.boxIndex += 1;
+  },
+
+  receiveMessage: function () {
+    var that = this;
+    this.websocket = new WebSocket(this.sorcketUrl);
+    this.websocket.onopen = function(evt) {
+      console.log(evt)
+    };
+    this.websocket.onclose = function(evt) {
+      console.log(evt+' -onclose')
+    };
+    this.websocket.onmessage = function(evt) {
+      that.text_ = JSON.parse(evt.data);
+      that.innerBarrage(that.text_);
+    };
+    this.websocket.onerror = function(evt) {
+      console.log(evt+' -onerror')
+    };
+  }
+}
+var enabled=true;
+var barrageMethod = new BarrageMethod();
+barrageMethod.init();
+
+//var interval_=setInterval(function(){
+//  barrageMethod.update();
+//},100);
+function enterframe(){
+  requestAnimationFrame(enterframe);
+  if(!enabled)return;
+  barrageMethod.update();
+}
+enterframe();
+
+
+$('.submitBtn').click(function () {
+  barrageMethod.innerBarrage();
+});

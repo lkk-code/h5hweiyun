@@ -1,0 +1,61 @@
+.barrageBg {
+  width: 8192px;
+  height: 1152px;
+  background: url("../img/barrage/bg.jpg");
+  background-size: 100% 100%; }
+  .barrageBg .code {
+    width: 1540px;
+    padding-top: 148px;
+    top: 0; }
+    .barrageBg .code.code1 {
+      left: 0; }
+    .barrageBg .code p {
+      width: 406px;
+      margin-left: 66px;
+      font-size: 48px;
+      color: #000; }
+    .barrageBg .code .codeBox {
+      width: 648px;
+      height: 643px;
+      margin: 0 auto;
+      background: url("../img/barrage/code1.png");
+      padding: 238px 0 0 78px; }
+      .barrageBg .code .codeBox img {
+        width: 360px;
+        height: 360px; }
+
+/*
+.barrageParent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.barrageBox {
+  position: absolute;
+  height: 100%;
+  padding-top: 40px;
+  top: 0;
+  left: 1920px;
+}
+
+.barrageWrap {
+  height: 45px;
+  margin: 40px 0;
+  background: rgba(0, 0, 0, .1);
+  white-space: nowrap;
+  position: relative;
+}
+
+.barrage {
+  display: inline-block;
+  max-width: 120px;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid red;
+  padding: 0 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}*/
